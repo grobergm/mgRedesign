@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+	<ul id="nav">
+		<li>Matt Groberg</li>
+		<li>About</li>
+		<li>Projects</li>
+		<li>Blog</li>
+		<li>Connect</li>
+	</ul>
+	<div id="background">
+		<div id="top-cloud"></div>
+		<div id="bottom-cloud"></div>
+		<div id="front-hill"></div>
+		<div id="back-hill"></div>
+	</div>
+	  <svg width="0" height="0"> 
+	    <filter id="c1-filter">
+	      <feTurbulence type="fractalNoise" baseFrequency=".01" numOctaves="10" />
+	      <feDisplacementMap in="SourceGraphic" scale="180" />
+	    </filter>
+		</svg>
+		<svg width="0" height="0"> 
+	    <filter id="c2-filter">
+	      <feTurbulence type="fractalNoise" baseFrequency=".01" numOctaves="25" />
+	      <feDisplacementMap in="SourceGraphic" scale="250" />
+	    </filter>
+		</svg>
+</body>
+</html>

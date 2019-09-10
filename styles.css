@@ -1,0 +1,75 @@
+html, body{
+  margin:0;
+  height:1000px;
+}
+
+#background{
+  position:relative;
+  width: 100vw;
+  height:100%;
+  background: deepskyblue;
+  overflow: hidden;
+}
+
+#nav{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index: 10;
+  display:flex;
+  list-style: none;
+  align-items: center;
+  justify-content:space-around;
+  width:100%;
+  height:80px;
+  margin-top:0;
+  background-color:rgba(255,255,255,0.5);
+
+}
+
+#top-cloud{
+  position: absolute;
+  top: -400px;
+  left: -1000px;
+  width: 500px;
+  height: 250px;  
+  border-radius: 50%;
+  box-shadow: 400px 400px 60px 0px #fff;
+  filter: url(#c1-filter);
+  animation: cloudDrift 25s linear infinite;
+}
+
+#bottom-cloud{
+  border-radius: 80%;
+  position: absolute;
+  top: 0;
+  left: -1500px;
+  width: 1000px;
+  height: 300px;
+  box-shadow: 400px 400px 100px 50px #fff;
+  filter: url(#c2-filter);
+  animation: cloudDrift 15s linear infinite;
+}
+
+#front-hill{
+  position:absolute;
+  top:800px;
+  right:-25vw;
+  height:50vw;
+  width:75vw;
+  transform: rotate(-30deg);
+  z-index:2;
+  border-radius: 50%;
+  background-color:forestgreen;
+}
+
+@keyframes cloudDrift {
+  0%{
+    transform: translate(0,0) scale(1);
+    opacity:1;
+  }
+  100%{
+    transform: translate(200vw,10vw) scale(2);
+    opacity:0.5;
+  }
+}
