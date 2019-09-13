@@ -3,8 +3,9 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" href="./styles.css">
+	<link rel="stylesheet" href="./triangles.css">
+	<script src="./scripts.js" ></script>
 </head>
-	<script src="./scroll.js" ></script>
 <body>
 	<div id="landing">
 		<div id="top-cloud"></div>
@@ -12,7 +13,45 @@
 		<h2 id="intro-text">I make websites come to life</h2>
 		<div id="background">
 			<div class="section parallax" id="lake">
-				<div id="forest"></div>
+				<div id="title">
+					<h1>Matt Groberg</h1>
+					<p>Web Developer</p>
+				</div>
+				<div id="forest">
+					<div id="about">
+						<h2>Hello,</h2>
+						<p>Welcome to my website! I am a frontend web developer living in Eugene Oregon. I have always been a very curious and creative person, driven by a desire to learn and discover new things.</p>
+						<p>I started my career in science, getting a M.S. degree in Botany, while working for state, federal, and non-profit agencies. My desire to learn new things eventually led me to web development.</p>
+						<p>I am looking for a full time position in web development. If you like what you see here, please reach out to me LinkedIn or send me an email</p>
+						<div id="links">
+							<a href="https://www.linkedin.com/in/matt-groberg-504283a0/">LinkedIn</a>
+							<a href="https://github.com/grobergm">GitHub</a>
+							<a href="mailto:grobergmg@gmail.com">Gmail</a>
+						</div>
+					</div>
+				</div>
+				<div id="under-forest">
+					<div class="triangle top-triangle" id="top-left-triangle" onclick="expand(event)">
+						<div class="expand-content">
+							<h1>Design</h1>
+						</div>
+					</div>
+					<div class="triangle top-triangle" id="top-right-triangle" onclick="expand(event)">
+						<div class="expand-content">
+							<h1>Blog</h1>
+						</div>
+					</div>
+					<div class="triangle bottom-triangle" id="bottom-right-triangle" onclick="expand(event)">
+						<div class="expand-content">
+							<h1>JavaScript</h1>
+						</div>
+					</div>
+					<div class="triangle bottom-triangle" id="bottom-left-triangle" onclick="expand(event)">
+						<div class="expand-content">
+							<h1>Data</h1>
+						</div>
+					</div>
+				</div>
 			</div>
 	</div>
 	</div>

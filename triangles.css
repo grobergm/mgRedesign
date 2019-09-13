@@ -1,0 +1,91 @@
+.caption{
+  color:white;
+  background:black;
+  padding:1rem;
+  margin:2rem;
+  align-self:center;
+}
+
+.triangle{
+  position:absolute;
+  top:0;
+  width:100%;
+  opacity:0.8;
+  display:flex;
+  height:100vh;
+}
+.top-triangle{
+  top:0;
+}
+
+.bottom-triangle{
+  top:100vh;
+}
+
+#top-left-triangle{
+  background:url('./img/design.jpg');
+  background-size:cover;
+  background-attachment:fixed;
+  clip-path: polygon(0% 0%,100% 0%,0% 100%);
+}
+#top-right-triangle{
+  background:url('./img/writing.jpg');
+  background-size:cover;
+  background-attachment:fixed;
+  clip-path: polygon(100% 0%,100% 100%,0% 100%);
+}
+#bottom-right-triangle{
+  background:url('./img/coding.png');
+  background-size:cover;
+  background-attachment:fixed;
+  clip-path: polygon(100% 0%,100% 100%,0% 0%);
+}
+#bottom-left-triangle{
+  background:url('./img/data.jpg');
+  background-size:cover;
+  background-attachment:fixed;
+  clip-path: polygon(100% 100%,0% 100%,0% 0%);
+}
+
+#top-left-triangle.expand{
+  clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%);
+  height:200vh;
+  z-index:15;
+  opacity:1;
+}
+
+#top-right-triangle.expand{
+  clip-path: polygon(100% 0%,100% 100%,0% 100%,0% 0%);
+  height:200vh;
+  z-index:15;
+  opacity:1;
+}
+
+#bottom-right-triangle.expand{
+  clip-path: polygon(100% 0%,100% 100%, 0% 100%,0% 0%);
+  height:200vh;
+  top:0;
+  z-index:15;
+  opacity:1;
+}
+
+#bottom-left-triangle.expand{
+  clip-path: polygon(100% 100%,0% 100%,0% 0%,100% 0%);
+  height:200vh;
+  top:0;
+  z-index:15;
+  opacity:1;
+}
+
+.expand-content{
+  display:none;
+  background-color:white;
+  width:75vw;
+  margin:2rem auto;
+  border-radius: 2px;
+  border:2px solid black;
+}
+
+.expand .expand-content{
+  display:block;
+}
