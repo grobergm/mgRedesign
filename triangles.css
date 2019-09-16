@@ -91,6 +91,9 @@
   display:block;
 }
 
+.expand span{
+  display:none;
+}
 .circle{
   position:absolute;
   z-index: 20;
@@ -103,7 +106,24 @@
   align-items: center;
 }
 
+
+
 #designFollower{
   top:25vh;
+  left:25vw;
+}
+
+#blogFollower{
+  top:75vh;
+  left:75vw;
+}
+
+#jsFollower{
+  top:25vh;
+  left:75vw;
+}
+
+#dataFollower{
+  top:75vh;
   left:25vw;
 }

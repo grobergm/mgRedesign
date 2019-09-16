@@ -1,5 +1,6 @@
 class MouseTracker{
 	constructor(size,sectionID){
+		this.sectionID=sectionID;
 		this.section=document.querySelector(`#${sectionID}`);
 		this.follower=document.querySelector(`#${sectionID}Follower`);
 		this.xp=0;
@@ -13,6 +14,7 @@ class MouseTracker{
 		this.xp= event.pageX-(this.size/2)-rect.x;
 		this.yp= event.pageY-(this.size/2)-rect.y;
 	}
+
 }
 
 class CircleButton extends MouseTracker{
@@ -20,27 +22,37 @@ class CircleButton extends MouseTracker{
 		super(size,sectionID);
 		this.buttonListeners=this.buttonListeners.bind(this);
 		this.followMouse=this.followMouse.bind(this);
-		this.toggleExpand=this.toggleExpand.bind(this);
+		this.resetPosition=this.resetPosition.bind(this);
+		this.expandSection=this.expandSection.bind(this);
+		this.collapseSection=this.collapseSection.bind(this);
 	}
 
 	buttonListeners(){
 		this.section.addEventListener('mousemove',this.setCurrentPosition)
 		this.section.addEventListener('mousemove',this.followMouse)
-		this.follower.addEventListener('click',this.toggleExpand)
+		this.section.addEventListener('mouseleave',this.resetPosition)
+		this.follower.addEventListener('click',this.expandSection)
+		document.querySelector(`#${this.sectionID} .collapse`).addEventListener('click',this.collapseSection)
 	}
 
 	followMouse(){
-		if(this.xp<0||this.yp<0){
-			this.follower.removeAttribute('style')
-		} else {
-			this.follower.style.left=`${this.xp}px`;
-			this.follower.style.top=`${this.yp}px`;
-		}
+		this.follower.style.left=`${this.xp}px`;
+		this.follower.style.top=`${this.yp}px`;
 	}
 
-	toggleExpand(){
-		this.section.classList.toggle('expand');
+	resetPosition(){
+		this.follower.removeAttribute('style');
+		this.collapseSection();
+	}
+
+	expandSection(){
+		this.section.classList.add('expand');
 		this.section.scrollIntoView();
+	}
+
+	collapseSection(){
+		console.log('collapse')
+		this.section.classList.remove('expand');
 	}
 }
 
@@ -62,5 +74,5 @@ document.addEventListener("DOMContentLoaded", function(){
 	sections.forEach(section=>{
 		const newCircle=new CircleButton(60,section)
 		newCircle.buttonListeners()
-	})
+	})	
 });
