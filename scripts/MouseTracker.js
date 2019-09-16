@@ -8,8 +8,21 @@ class MouseTracker{
 		this.xAdjust=0;
 		this.yAdjust=0;
 		this.size=size;
+		this.mouseMoveListener=this.mouseMoveListener.bind(this)
 		this.startFollowing=this.startFollowing.bind(this)
 		this.stopFollowing=this.stopFollowing.bind(this)
+	}
+
+	createCircle(){
+		const follower=document.createElement('span')
+		follower.innerHTML=this.secctionID;
+		follower.setAttribute('id',`${this.sectionID}Follower`)
+		follower.setAttribute('style',`
+			background-color:${this.color};
+			height:${this.size}px;
+			width:${this.size}px;
+			border-radius:50%;
+			position:absolute;`)
 	}
 
 	mouseMoveListener(){
@@ -40,24 +53,21 @@ class CircleButton extends MouseTracker{
 		this.color=color;
 		this.sectionID=sectionID;
 		this.follower;
+		this.buttonListeners=this.buttonListeners.bind(this);
+		this.createFollower=this.createFollower.bind(this);
+		this.destroyFollower=this.destroyFollower.bind(this);
+		this.toggleExpand=this.toggleExpand.bind(this);
 	}
 
 	buttonListeners(){
 		this.sectionID.addEventListener('mouseenter',this.createFollower)
 		this.sectionID.addEventListener('mouseleave',this.destroyFollower)
-		this.follower.addEventListener('click',clickExpand)
+		this.mouseMoveListener();
+		this.follower.addEventListener('click',toggleExpand)
 	}
 
 	createFollower(){
-		const follower=document.createElement('span')
-		follower.innerHTML=this.secctionID;
-		follower.setAttribute('id',`${this.sectionID}Follower`)
-		follower.setAttribute('style',`
-			background-color:${this.color};
-			height:${this.size}px;
-			width:${this.size}px;
-			border-radius:50%;
-			position:absolute;`)
+		this.createCircle();
 		this.follower=follower;
 		this.startFollowing(follower)
 	}
@@ -67,13 +77,27 @@ class CircleButton extends MouseTracker{
 	}
 
 	toggleExpand(){
+		console.log(this)
 		this.section.classList.toggle('expand');
 		this.section.scrollIntoView();
 	}
 }
 
 class CircleClipper{
-	constructor(){
+	constructor(size,sectionID){
+		super(size,sectionID)
+		this.size=size;
+		this.section=document.querySelector(`#${this.sectionID}`);
+	}
 
+	clipCircle(){
+		let x = this.clientX;
+    let y = this.clientY;
+    this.createCircle();
+    let circle = `circle(${this.size}px at ${x}px ${y}px)`;
+    container.style['-webkit-clip-path'] = circle;
+    container.style['clip-path'] = circle;
 	}
 }
+
+module.exports={CircleButton}
