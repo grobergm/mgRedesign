@@ -48,11 +48,13 @@ class CircleButton extends MouseTracker{
 	expandSection(){
 		this.section.classList.add('expand');
 		this.section.scrollIntoView();
+		this.section.removeEventListener('mousemove',this.followMouse)
 	}
 
 	collapseSection(){
 		console.log('collapse')
 		this.section.classList.remove('expand');
+		this.section.addEventListener('mousemove',this.followMouse)
 	}
 }
 
@@ -74,5 +76,6 @@ document.addEventListener("DOMContentLoaded", function(){
 	sections.forEach(section=>{
 		const newCircle=new CircleButton(60,section)
 		newCircle.buttonListeners()
-	})	
+	})
+
 });
