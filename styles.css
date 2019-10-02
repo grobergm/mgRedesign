@@ -132,7 +132,7 @@ div.btn:hover span.linkCover{
 
 #mist3{
   position: absolute;
-  top:10%;
+  bottom:10%;
   opacity:0.1;  
 }
 
@@ -140,7 +140,7 @@ div.btn:hover span.linkCover{
   height:100%;
   display:grid;
   grid-template-columns: 100%;
-  grid-template-rows: 50vh 50vh 50vh;
+  grid-template-rows: 50vh 100vh;
   background: white;
 }
 
@@ -158,4 +158,20 @@ div.btn:hover span.linkCover{
   max-width:500px;
 }
 
+#slideContent{
+  display:grid;
+  grid-template-columns: 100% 100% 100%;
+  transition:transform 1s;
+}
 
+#slideContent.left{
+  transform:translateX(0%);
+}
+
+#slideContent.middle{
+  transform:translateX(-100%);
+}
+
+#slideContent.right{
+  transform:translateX(-200%);
+}

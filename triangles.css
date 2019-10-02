@@ -1,3 +1,8 @@
+#projects{
+  display:grid;
+  grid-template-rows: 10vh 50vh 50vh;
+}
+
 .caption{
   color:white;
   background:black;
@@ -25,25 +30,25 @@
 
 #design{
   background:url('./img/design.jpg');
-  background-attachment:fixed;
+  /*background-attachment:fixed;*/
   clip-path: polygon(0% 0%,100% 0%,0% 100%);
 }
 
 #blog{
   background:url('./img/writing.jpg');
-  background-attachment:fixed;
+  /*background-attachment:fixed;*/
   clip-path: polygon(100% 0%,100% 100%,0% 100%);
 }
 
 #js{
   background:url('./img/coding.png');
-  background-attachment:fixed;
+  /*background-attachment:fixed;*/
   clip-path: polygon(100% 0%,100% 100%,0% 0%);
 }
 
 #data{
   background:url('./img/data.jpg');
-  background-attachment:fixed;
+  /*background-attachment:fixed;*/
   clip-path: polygon(100% 100%,0% 100%,0% 0%);
 }
 
