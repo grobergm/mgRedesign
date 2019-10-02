@@ -4,33 +4,32 @@
 	<title></title>
 	<link rel="stylesheet" href="./styles.css">
 	<link rel="stylesheet" href="./triangles.css">
+	<script src="./scripts/Animator.js"></script>
+	<script src="./scripts/MouseTracker.js"></script>
+	<script src="./scripts/TypeWriter.js"></script>
+	<script src="./scripts/Cloud.js"></script>
 	<script src="./scripts/index.js"></script>
 </head>
 <body>
 	<div id="landing">
 		<div id="top-cloud"></div>
-		<h2 id="intro-text">I make websites come to life</h2>
+		<h2 id="intro-text"></h2>
 		<div id="wrapper">
 			<div class="section parallax" id="lake">
-				<div id="title">
-					<h1>Matt Groberg</h1>
-					<p>Web Developer</p>
-				</div>
+				<div></div>
 				<div id="forest">
-				<div id="mist3"></div>
-				<div id="mist2"></div>
-				<div id="mist1"></div>
+					<div id="mist3"></div>
+					<div id="mist2"></div>
+					<div id="mist1"></div>
 				</div>
 				<div id="under-forest">
-					<div id="about">
-						<h2>Hello,</h2>
-						<p>Welcome to my website! I am a frontend web developer living in Eugene Oregon. I have always been a very curious and creative person, driven by a desire to learn and discover new things.</p>
-						<p>I started my career in science, getting a M.S. degree in Botany, while working for state, federal, and non-profit agencies. My desire to learn new things eventually led me to web development.</p>
-						<p>I am looking for a full time position in web development. If you like what you see here, please reach out to me LinkedIn or send me an email</p>
+					<div id="nav">
+						<h1>Matt Groberg</h1>
+						<p>Full Stack Web Development</p>
 						<div id="links">
-							<a href="https://www.linkedin.com/in/matt-groberg-504283a0/">LinkedIn</a>
-							<a href="https://github.com/grobergm">GitHub</a>
-							<a href="mailto:grobergmg@gmail.com">Gmail</a>
+							<div class="btn" id="about"><span class="linkCover"></span><span class="btn-name">about</span></div>
+							<div class="btn" id="projects"><span class="linkCover"></span><span class="btn-name">projects</span></div>
+							<div class="btn" id="contact"><span class="linkCover"></span><span class="btn-name">contact</span></div>
 						</div>
 					</div>
 					<div class="triangle top-triangle" id="design">
