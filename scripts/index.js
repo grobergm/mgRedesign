@@ -26,10 +26,18 @@ document.addEventListener("DOMContentLoaded", function(){
 		newCircle.buttonListeners()
 	})
 
-	const topCloud = document.querySelector('#top-cloud');
-	const mist1 = document.querySelector('#mist1');
-	const mist2 = document.querySelector('#mist2');
-	const mist3 = document.querySelector('#mist3');
+	const topCloud= new Cloud('top-cloud',10);
+	const mist1= new Cloud('mist1',13);
+	const mist2= new Cloud('mist2',9);
+	const mist3= new Cloud('mist3',5);
+	topCloud.makeClouds();
+	mist1.makeClouds();
+	mist2.makeClouds();
+	mist3.makeClouds();
+
+
+
+
 	const aboutBtn = document.querySelector('#aboutBtn');
 	const projectsBtn = document.querySelector('#projectsBtn');
 	const contactBtn = document.querySelector('#contactBtn');
@@ -37,10 +45,6 @@ document.addEventListener("DOMContentLoaded", function(){
 	projectsBtn.addEventListener("click",()=>{slideContent('middle')})
 	contactBtn.addEventListener("click",()=>{slideContent('right')})
 	const slider = document.querySelector('#slideContent');
-	refreshClouds(topCloud,60)
-	refreshClouds(mist1,90)
-	refreshClouds(mist2,35)
-	refreshClouds(mist3,30)
 
 	function slideContent(position){
 		slider.className=position;
@@ -48,6 +52,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	const introText = document.querySelector('#intro-text');
 	startTyping(introText,randomIntroText())
-	setInterval(()=>{startTyping(introText,randomIntroText())},13800)
+	setInterval(()=>{startTyping(introText,randomIntroText())},10000)
 
 });

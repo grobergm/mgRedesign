@@ -19,8 +19,8 @@ h2{
 }
 
 .btn {
-  position:relative;
   color:white;
+  position:relative;
   height:2rem;
   width:4rem;
   text-decoration: none;
@@ -44,15 +44,17 @@ h2{
 
 .btn-name{
   position:absolute;
-  mix-blend-mode: difference;
   top:50%;
   left:50%;
   transform: translate(-50%,-50%)
 }
 
 div.btn:hover span.linkCover{
-  color:red;
   transform:translateX(0);
+}
+
+div.btn:hover .btn-name{
+  color:black;
 }
 
 #landing{
@@ -68,14 +70,47 @@ div.btn:hover span.linkCover{
   color:deepskyblue;
 }
 
-#top-cloud {
+.cloud{
   position: absolute;
-  overflow: hidden;
-  width: 1px; height: 1px;
-  transition: transform 20s;
-  transform: translate(-100%, -100%);
+  width: 1px; 
+  height: 1px;
   border-radius: 50%;
-  filter: url(#filter);
+  animation-name: moveCloud;
+  animation-iteration-count:infinite;
+  transform:translateX(-120vw) ;
+  filter:url('#filter') blur(5px);
+}
+
+#top-cloud{
+  top:20%;
+  animation-duration: 10s;
+}
+
+#mist1{
+  top:25%;
+  opacity:0.7;
+  animation-duration: 13s;
+}
+
+#mist2{
+  bottom:10%;
+  opacity:0.5;
+  animation-duration: 9s;
+}
+
+#mist3{
+  top:10%;
+  opacity:0.3;
+  animation-duration: 5s;
+}
+
+@keyframes moveCloud{
+  from{
+    transform:translateX(-120vw);
+  }
+  to{
+    transform:translateX(120vw);
+  }
 }
 
 #wrapper{
@@ -118,24 +153,6 @@ div.btn:hover span.linkCover{
   position: relative;
 }
 
-#mist1{
-  position: absolute;
-  top:30%;
-  opacity:0.7;
-}
-
-#mist2{
-  position: absolute;
-  top:20%;
-  opacity:0.5;  
-}
-
-#mist3{
-  position: absolute;
-  bottom:10%;
-  opacity:0.1;  
-}
-
 #under-forest{
   height:100%;
   display:grid;
@@ -161,7 +178,7 @@ div.btn:hover span.linkCover{
 #slideContent{
   display:grid;
   grid-template-columns: 100% 100% 100%;
-  transition:transform 1s;
+  transition:transform 0.4s;
 }
 
 #slideContent.left{
