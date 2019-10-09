@@ -28,25 +28,25 @@
   grid-column:1/2;
 }
 
-#design{
+#wireframes{
   background:url('./img/design.jpg');
   /*background-attachment:fixed;*/
   clip-path: polygon(0% 0%,100% 0%,0% 100%);
 }
 
-#blog{
+#typefaces{
   background:url('./img/writing.jpg');
   /*background-attachment:fixed;*/
   clip-path: polygon(100% 0%,100% 100%,0% 100%);
 }
 
-#js{
+#layouts{
   background:url('./img/coding.png');
   /*background-attachment:fixed;*/
   clip-path: polygon(100% 0%,100% 100%,0% 0%);
 }
 
-#data{
+#effects{
   background:url('./img/data.jpg');
   /*background-attachment:fixed;*/
   clip-path: polygon(100% 100%,0% 100%,0% 0%);
@@ -58,19 +58,19 @@
   opacity:1;
 }
 
-#design.expand{
+#wireframes.expand{
   clip-path: none;
 }
 
-#blog.expand{
+#typefaces.expand{
   clip-path: none;
 }
 
-#js.expand{
+#layouts.expand{
   clip-path: none;
 }
 
-#data.expand{
+#effects.expand{
   clip-path: none;
 }
 
@@ -104,22 +104,22 @@
 }
 
 
-#designFollower{
+#wireframesFollower{
   top:25%;
   left:25%;
 }
 
-#blogFollower{
+#typefacesFollower{
   top:50%;
   right:25%;
 }
 
-#jsFollower{
+#layoutsFollower{
   top:25%;
   right:25%;
 }
 
-#dataFollower{
+#effectsFollower{
   top:50%;
   left:25%;
 }

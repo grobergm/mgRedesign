@@ -9,6 +9,10 @@ html, body{
   overflow:hidden;
 }
 
+h1,h2{
+  font-family:sans-serif;
+}
+
 h1{
   font-size:3rem;
 }
@@ -55,6 +59,7 @@ div.btn:hover span.linkCover{
 
 div.btn:hover .btn-name{
   color:black;
+  font-weight: bold
 }
 
 #landing{
@@ -67,7 +72,8 @@ div.btn:hover .btn-name{
   top:10vh;
   left:50vw;
   transform: translate(-50%,-50%);
-  color:deepskyblue;
+  color:white;
+  filter:url('#filter');
 }
 
 .cloud{
@@ -77,8 +83,9 @@ div.btn:hover .btn-name{
   border-radius: 50%;
   animation-name: moveCloud;
   animation-iteration-count:infinite;
-  transform:translateX(-120vw) ;
-  filter:url('#filter') blur(5px);
+  transform:translateX(-120vw);  
+  filter:url('#filter');
+  
 }
 
 #top-cloud{

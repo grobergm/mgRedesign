@@ -20,20 +20,20 @@ function randomIntroText(){
 }
 
 document.addEventListener("DOMContentLoaded", function(){
-	const sections= ['design','js','blog','data']
+	const sections= ['wireframes','layouts','typefaces','effects']
 	sections.forEach(section=>{
 		const newCircle=new CircleButton(60,section)
 		newCircle.buttonListeners()
 	})
 
-	const topCloud= new Cloud('top-cloud',10);
+	// const topCloud= new Cloud('top-cloud',10);
 	const mist1= new Cloud('mist1',13);
 	const mist2= new Cloud('mist2',9);
 	const mist3= new Cloud('mist3',5);
-	topCloud.makeClouds();
-	mist1.makeClouds();
-	mist2.makeClouds();
-	mist3.makeClouds();
+	// topCloud.makeClouds();
+	mist1.animateClouds();
+	mist2.animateClouds();
+	mist3.animateClouds();
 
 
 

@@ -4,31 +4,30 @@
 	<title></title>
 	<link rel="stylesheet" href="./styles.css">
 	<link rel="stylesheet" href="./triangles.css">
-	<script src="./scripts/Animator.js"></script>
 	<script src="./scripts/MouseTracker.js"></script>
 	<script src="./scripts/Cloud.js"></script>
 	<script src="./scripts/index.js"></script>
 </head>
 <body>
 	<div id="landing">
-		<div class="cloud test" id="top-cloud"></div>
+		<span class="cloud" id="top-cloud"></span>
 		<h2 id="intro-text"></h2>
 		<div id="wrapper">
 			<div class="section parallax" id="lake">
 				<div></div>
-				<div class="cloud" id="mist2"></div>
+				<span class="cloud" id="mist2"></span>
 				<div id="forest">
-					<div class="cloud" id="mist3"></div>
-					<div class="cloud" id="mist1"></div>
+					<span class="cloud" id="mist3"></span>
+					<span class="cloud" id="mist1"></span>
 				</div>
 				<div id="under-forest">
 					<div id="nav">
 						<h1>Matt Groberg</h1>
 						<p>Full Stack Web Development</p>
 						<div id="links">
-							<div class="btn" id="aboutBtn"><span class="linkCover"></span><span class="btn-name">about</span></div>
-							<div class="btn" id="projectsBtn"><span class="linkCover"></span><span class="btn-name">projects</span></div>
-							<div class="btn" id="contactBtn"><span class="linkCover"></span><span class="btn-name">contact</span></div>
+							<div class="btn" id="aboutBtn"><span class="linkCover"></span><span class="btn-name">About</span></div>
+							<div class="btn" id="projectsBtn"><span class="linkCover"></span><span class="btn-name">Design</span></div>
+							<div class="btn" id="contactBtn"><span class="linkCover"></span><span class="btn-name">Logic</span></div>
 						</div>
 					</div>
 					<div id="slideContent">
@@ -36,38 +35,38 @@
 							<h2>About</h2>
 						</div>
 						<div id="projects">
-							<h2>Projects</h2>
-							<div class="triangle top-triangle" id="design">
-								<span class="circle" id="designFollower">Design</span>
+							<h2>Design</h2>
+							<div class="triangle top-triangle" id="wireframes">
+								<span class="circle" id="wireframesFollower">Wireframe</span>
 								<div class="expand-content">
 									<div class='collapse'>Back To Menu</div>
-									<h1>Design</h1>
+									<h1>Wireframe</h1>
 								</div>
 							</div>
-							<div class="triangle top-triangle" id="blog">
-								<span class="circle" id="blogFollower">Blog</span>
+							<div class="triangle top-triangle" id="typefaces">
+								<span class="circle" id="typefacesFollower">Typeface</span>
 								<div class="expand-content">
 									<div class='collapse'>Back To Menu</div>
-									<h1>Blog</h1>
+									<h1>Typeface</h1>
 								</div>
 							</div>
-							<div class="triangle bottom-triangle" id="js">
-								<span class="circle" id="jsFollower">JS</span>
+							<div class="triangle bottom-triangle" id="layouts">
+								<span class="circle" id="layoutsFollower">Layout</span>
 								<div class="expand-content">
 									<div class='collapse'>Back To Menu</div>
-									<h1>JavaScript</h1>
+									<h1>Layout</h1>
 								</div>
 							</div>
-							<div class="triangle bottom-triangle" id="data">
-								<span class="circle" id="dataFollower">Data</span>
+							<div class="triangle bottom-triangle" id="effects">
+								<span class="circle" id="effectsFollower">Effects</span>
 								<div class="expand-content">
 									<div class='collapse'>Back To Menu</div>
-									<h1>Data</h1>
+									<h1>Special Effects</h1>
 								</div>
 							</div>
 						</div>
 						<div id="contact">
-							<h2>Contact</h2>
+							<h2>Logic</h2>
 						</div>
 					</div>
 				</div>
@@ -78,9 +77,9 @@
 	<svg>
 	  <filter id="filter">
 	    <feTurbulence type="fractalNoise"
-	      baseFrequency="0.01" numOctaves="10" />
+	      baseFrequency="2.5" numOctaves="10" />
 	    <feDisplacementMap
-	      in="SourceGraphic" scale="250" />
+	      in="SourceGraphic" scale="10" />
 	  </filter>
 	</svg>
 </body>
