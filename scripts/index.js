@@ -20,14 +20,17 @@ function randomIntroText(){
 }
 
 document.addEventListener("DOMContentLoaded", function(){
+
+	const introText = document.querySelector('#intro-text');
+	startTyping(introText,randomIntroText())
+	setInterval(()=>{startTyping(introText,randomIntroText())},10000)
+
 	const sections= ['wireframes','layouts','typefaces','effects']
 	sections.forEach(section=>{
-		const newCircle=new CircleButton(60,section)
+		const newCircle=new MouseTracker(100,section)
 		newCircle.buttonListeners()
 	})
 
-	const newClipper= new CircleClipper(60,'realForest')
-	newClipper.addMouseListener()
 	// const topCloud= new Cloud('top-cloud',10);
 	const mist1= new Cloud('mist1',13);
 	const mist2= new Cloud('mist2',9);
@@ -36,9 +39,6 @@ document.addEventListener("DOMContentLoaded", function(){
 	mist1.animateClouds();
 	mist2.animateClouds();
 	mist3.animateClouds();
-
-
-
 
 	const aboutBtn = document.querySelector('#aboutBtn');
 	const projectsBtn = document.querySelector('#projectsBtn');
@@ -51,9 +51,5 @@ document.addEventListener("DOMContentLoaded", function(){
 	function slideContent(position){
 		slider.className=position;
 	}
-
-	const introText = document.querySelector('#intro-text');
-	startTyping(introText,randomIntroText())
-	setInterval(()=>{startTyping(introText,randomIntroText())},10000)
 
 });
