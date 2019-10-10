@@ -95,31 +95,28 @@
   z-index: 2;
   border-radius: 50%;
   background:white;
-  width:60px;
-  height:60px;
+  width:100px;
+  height:100px;
   display:flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  will-change: transform;
 }
 
 
 #wireframesFollower{
-  top:25%;
-  left:25%;
+  transform:translate(25vw,10vh);
 }
 
 #typefacesFollower{
-  top:50%;
-  right:25%;
+  transform:translate(50vw,30vh);
 }
 
 #layoutsFollower{
-  top:25%;
-  right:25%;
+  transform:translate(50vw,10vh);
 }
 
 #effectsFollower{
-  top:50%;
-  left:25%;
+  transform:translate(25vw,30vh);
 }

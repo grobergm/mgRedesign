@@ -36,8 +36,9 @@ class CircleButton extends MouseTracker{
 	}
 
 	followMouse(){
-		this.follower.style.left=`${this.xp}px`;
-		this.follower.style.top=`${this.yp}px`;
+		console.log('following',this.follower.style.transform)
+		this.follower.style.transform=`translate(${this.xp}px, ${this.yp}px)`;
+		// this.follower.style.transform=`translateY(${this.yp}px)`;
 	}
 
 	resetPosition(){
@@ -73,6 +74,5 @@ class CircleClipper extends MouseTracker{
     let circle = `circle(${this.size}px at ${this.xp}px ${this.yp}px)`;
     this.section.style['-webkit-clip-path'] = circle;
     this.section.style['clip-path'] = circle;
-		console.log(this.section)
 	}
 }
