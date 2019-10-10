@@ -2,7 +2,6 @@ class MouseTracker{
 	constructor(size,sectionID){
 		this.sectionID=sectionID;
 		this.section=document.querySelector(`#${sectionID}`);
-		this.follower=document.querySelector(`#${sectionID}Follower`);
 		this.xp=0;
 		this.yp=0;
 		this.size=size;
@@ -20,6 +19,7 @@ class MouseTracker{
 class CircleButton extends MouseTracker{
 	constructor(size,sectionID){
 		super(size,sectionID);
+		this.follower=document.querySelector(`#${sectionID}Follower`);
 		this.buttonListeners=this.buttonListeners.bind(this);
 		this.followMouse=this.followMouse.bind(this);
 		this.resetPosition=this.resetPosition.bind(this);
@@ -52,7 +52,6 @@ class CircleButton extends MouseTracker{
 	}
 
 	collapseSection(){
-		console.log('collapse')
 		this.section.classList.remove('expand');
 		this.section.addEventListener('mousemove',this.followMouse)
 	}
@@ -61,12 +60,19 @@ class CircleButton extends MouseTracker{
 class CircleClipper extends MouseTracker{
 	constructor(size,sectionID){
 		super(size,sectionID)
-		this.size=size;
+		this.addMouseListener=this.addMouseListener.bind(this);
+		this.clipCircle=this.clipCircle.bind(this);
+	}
+
+	addMouseListener(){
+		document.addEventListener('mousemove',this.setCurrentPosition)
+		document.addEventListener('mousemove',this.clipCircle)
 	}
 
 	clipCircle(){
     let circle = `circle(${this.size}px at ${this.xp}px ${this.yp}px)`;
     this.section.style['-webkit-clip-path'] = circle;
     this.section.style['clip-path'] = circle;
+		console.log(this.section)
 	}
 }

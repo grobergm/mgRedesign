@@ -22,46 +22,6 @@ h2{
   font-size:2rem;
 }
 
-.btn {
-  color:white;
-  position:relative;
-  height:2rem;
-  width:4rem;
-  text-decoration: none;
-  padding:1rem;
-  border-radius: 0.5rem;
-  border:2px solid white;
-  cursor: pointer;
-  overflow:hidden;
-}
-
-.linkCover{
-  position:absolute;
-  top:0;
-  left:0;
-  transform:translateX(-100%);
-  background:white;
-  transition: transform 0.3s;
-  width:100%;
-  height:100%;
-}
-
-.btn-name{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%)
-}
-
-div.btn:hover span.linkCover{
-  transform:translateX(0);
-}
-
-div.btn:hover .btn-name{
-  color:black;
-  font-weight: bold
-}
-
 #landing{
   background-color:deepskyblue;
 }
@@ -146,7 +106,7 @@ div.btn:hover .btn-name{
   transform: translateZ(-6px) scale(5);
   background-size: cover;
   background-position: center;
-  z-index:-1;
+  z-index:-2;
 }
 
 #lake::after{
@@ -158,6 +118,19 @@ div.btn:hover .btn-name{
   background: url(./img/forestWBlack.png) no-repeat center;
   background-size: cover;
   position: relative;
+  grid-row:2/3;
+  grid-column:1/2;
+  z-index: 0;
+}
+
+#realForest{
+  height:100%;
+  background: url(./img/forest.png) no-repeat center;
+  background-size: cover;
+  position: relative;
+  grid-row:2/3;
+  grid-column:1/2;
+  z-index: 1;
 }
 
 #under-forest{
@@ -166,6 +139,46 @@ div.btn:hover .btn-name{
   grid-template-columns: 100%;
   grid-template-rows: 50vh 100vh;
   background: white;
+}
+
+.btn {
+  color:white;
+  position:relative;
+  height:2rem;
+  width:4rem;
+  text-decoration: none;
+  padding:1rem;
+  border-radius: 0.5rem;
+  border:2px solid white;
+  cursor: pointer;
+  overflow:hidden;
+}
+
+.linkCover{
+  position:absolute;
+  top:0;
+  left:0;
+  transform:translateX(-100%);
+  background:white;
+  transition: transform 0.3s;
+  width:100%;
+  height:100%;
+}
+
+.btn-name{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%)
+}
+
+div.btn:hover span.linkCover{
+  transform:translateX(0);
+}
+
+div.btn:hover .btn-name{
+  color:black;
+  font-weight: bold
 }
 
 #nav{

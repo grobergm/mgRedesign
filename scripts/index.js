@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", function(){
 		newCircle.buttonListeners()
 	})
 
+	const newClipper= new CircleClipper(60,'realForest')
+	newClipper.addMouseListener()
 	// const topCloud= new Cloud('top-cloud',10);
 	const mist1= new Cloud('mist1',13);
 	const mist2= new Cloud('mist2',9);
